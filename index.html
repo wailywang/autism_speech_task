@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Autism Speech Task</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .video-block {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    video {
+      width: 100%;
+      max-width: 640px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .caption {
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Autism Speech Task: Video Prompts</h1>
+  <div id="container"></div>
+
+  <script>
+    fetch('autism_intervention_prompts.txt')
+      .then(response => response.text())
+      .then(data => {
+        const lines = data.trim().split('\n');
+        const container = document.getElementById('container');
+
+        lines.forEach((caption, index) => {
+          const videoNumber = index + 1;
+          const block = document.createElement('div');
+          block.className = 'video-block';
+
+          block.innerHTML = `
+            <video controls src="videos/prompt_${videoNumber}.mp4"></video>
+            <div class="caption">${caption}</div>
+          `;
+
+          container.appendChild(block);
+        });
+      })
+      .catch(error => {
+        console.error('Failed to load captions:', error);
+        document.getElementById('container').innerHTML = '<p style="color:red;">Failed to load prompts. Please make sure the text file exists.</p>';
+      });
+  </script>
+</body>
+</html>
