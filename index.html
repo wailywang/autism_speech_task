@@ -2,39 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Autism Speech Task</title>
+  <title>Autism Speech Task – Clinical Intervention Viewer</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
     }
+
     h1 {
       text-align: center;
+      font-size: 2.5rem;
+      color: #0a3d62;
+      margin-bottom: 10px;
+    }
+
+    p.subheading {
+      text-align: center;
+      color: #5d6d7e;
+      font-size: 1.1rem;
       margin-bottom: 40px;
     }
+
+    #container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
     .video-block {
       background: white;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 15px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .video-block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
     video {
       width: 100%;
-      max-width: 640px;
-      display: block;
-      margin: 0 auto 10px;
+      border-radius: 10px;
+      margin-bottom: 12px;
     }
+
     .caption {
       text-align: center;
-      font-size: 16px;
-      color: #333;
+      font-size: 15px;
+      color: #2c3e50;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <h1>Autism Speech Task: Video Prompts</h1>
+  <p class="subheading">Clinician Reference Portal · Observational Prompts for Autism Intervention</p>
+
   <div id="container"></div>
 
   <script>
