@@ -12,7 +12,8 @@ This project presents a prototype web-based interactive platform that integrates
 
 ## Website
 
-This GitHub repository serves as the backend and frontend for a website-based interface. The `index.html` file launches the interactive task system in a browser.
+This GitHub repository powers the website interface available at:  
+👉 **[https://wailywang.github.io/autism_speech_task](https://wailywang.github.io/autism_speech_task)**
 
 ## Video Generation
 
